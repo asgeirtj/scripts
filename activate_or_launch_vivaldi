@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if Vivaldi is running
+if pgrep Vivaldi > /dev/null; then
+    # Vivaldi is running, so bring it to the foreground
+    osascript -e 'tell application "Vivaldi" to activate'
+else
+    # Vivaldi is not running, so start it with the desired flags
+    /Applications/Vivaldi.app/Contents/MacOS/Vivaldi --disable-features=UseEcoQoSForBackgroundProcess &
+fi
